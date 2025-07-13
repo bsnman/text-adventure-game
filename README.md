@@ -40,7 +40,7 @@ Modify files in `src/data` and `src/components` to extend the game, create new s
 
 ### World Generation
 
-`src/data/world.ts` exports a configuration object and uses it to generate the game map. Rooms listed in the configuration are connected automatically with a reusable walkway room. Replacing or adjusting this configuration lets you create different levels without changing the game logic.
+`src/data/world.ts` exports a configuration object and uses it to generate the game map. Rooms listed in the configuration are connected automatically with a reusable walkway room. The order of rooms is randomized on each page load so the layout changes every time. Replacing or adjusting this configuration lets you create different levels without changing the game logic.
 
 A small map below the room description shows the locations you have already visited. Each room is drawn as a square with openings for any available exits and your current location highlighted.
 

@@ -14,9 +14,13 @@ export interface WorldConfig {
  * north–south fashion.
  *
  * @param config - world generation configuration
+ * @param rng - random number generator used to shuffle rooms
  * @returns generated world object
  */
-export function generateWorld(config: WorldConfig): World {
+export function generateWorld(
+  config: WorldConfig,
+  rng: () => number = Math.random
+): World {
   if (!config.rooms.start) {
     throw new Error('Start room is required')
   }
@@ -25,6 +29,12 @@ export function generateWorld(config: WorldConfig): World {
   world.start = { ...config.rooms.start, exits: {} }
 
   const others = Object.keys(config.rooms).filter(n => n !== 'start')
+
+  // Shuffle rooms using Fisher-Yates to produce a random layout
+  for (let i = others.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1))
+    ;[others[i], others[j]] = [others[j], others[i]]
+  }
   let previous = 'start'
   others.forEach((name, idx) => {
     const walkwayName = `walkway${idx + 1}`
