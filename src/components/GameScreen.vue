@@ -8,6 +8,11 @@ const game = useGameStore()
   <div>
     <h1>Text Adventure Game</h1>
     <p>{{ game.room.description }}</p>
+    <ul>
+      <li v-for="direction in Object.keys(game.room.exits)" :key="direction">
+        {{ direction }}
+      </li>
+    </ul>
   </div>
 </template>
 
