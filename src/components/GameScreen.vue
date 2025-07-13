@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useGameStore } from '../store/game'
+import { usePlayerStore } from '../store/player'
 import MapCanvas from './MapCanvas.vue'
 import { useKeyboardMovement } from '../composables/useKeyboardMovement'
 
 const game = useGameStore()
+const player = usePlayerStore()
 useKeyboardMovement(game.move)
 </script>
 
@@ -19,6 +21,18 @@ useKeyboardMovement(game.move)
       </v-card>
     </v-col>
     <v-col cols="3" class="side-panel d-flex flex-column">
+      <v-card class="mb-2">
+        <v-card-title>Stats</v-card-title>
+        <v-card-text>
+          <div>Min Damage: {{ player.minDamage }}</div>
+          <div>Max Damage: {{ player.maxDamage.toFixed(1) }}</div>
+          <div>Attack Speed: {{ player.attackSpeed.toFixed(2) }} /s</div>
+          <div class="mt-2">Strength: {{ player.strength }}</div>
+          <div>Agility: {{ player.agility }}</div>
+          <div>Vitality: {{ player.vitality }}</div>
+          <div>Intelligence: {{ player.intelligence }}</div>
+        </v-card-text>
+      </v-card>
       <div class="flex-grow-1"></div>
       <div class="d-flex flex-column align-center mb-4">
         <v-btn

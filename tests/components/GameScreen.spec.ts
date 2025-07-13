@@ -18,6 +18,7 @@ describe('GameScreen', () => {
     const { getByText, getByLabelText, getAllByText } = renderGame()
 
     getByText('dimly lit room', { exact: false })
+    getByText('Min Damage: 3')
     const btn = getByLabelText('Go north')
     await fireEvent.click(btn)
     getAllByText('long hallway', { exact: false })
@@ -26,6 +27,7 @@ describe('GameScreen', () => {
   it('moves with keyboard arrows', async () => {
     const { getByText, getAllByText } = renderGame()
     getByText('dimly lit room', { exact: false })
+    expect(getAllByText(/Attack Speed:/).length).toBeGreaterThan(0)
     await fireEvent.keyDown(window, { key: 'ArrowUp' })
     getAllByText('long hallway', { exact: false })
   })
