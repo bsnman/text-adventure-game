@@ -42,6 +42,19 @@ A small map below the room description shows the locations you have already visi
 
 You can navigate using the on-screen arrow buttons or with your keyboard. Both the arrow keys and the classic `W`, `A`, `S`, `D` keys trigger movement between rooms.
 
+## Features
+
+This project aims to grow into a full text adventure experience. The following features are currently planned:
+
+- Interactive exploration of rooms and locations.
+- Inventory management for picking up and using items.
+- Character interaction including conversations with NPCs.
+- Detailed character stats such as health, strength, agility and experience.
+- Quests and objectives that guide the story.
+- Turn-based RPG battle system with player and enemy stats, critical hits and rewards.
+- Save and load support.
+- Map of visited rooms drawn on a canvas.
+
 ## License
 
 MIT
