@@ -38,6 +38,8 @@ src/
 
 Modify files in `src/data` and `src/components` to extend the game, create new scenes or add features.
 
+A small map below the room description shows the locations you have already visited. Each room is drawn as a square with openings for any available exits and your current location highlighted.
+
 ## License
 
 MIT

@@ -4,3 +4,8 @@ export interface Room {
 }
 
 export type World = Record<string, Room>
+
+export interface Coordinates {
+  x: number
+  y: number
+}
