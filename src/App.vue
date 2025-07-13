@@ -5,7 +5,7 @@ import GameScreen from './components/GameScreen.vue'
 <template>
   <v-app>
     <v-main>
-      <v-container class="text-center">
+      <v-container fluid class="pa-0">
         <GameScreen />
       </v-container>
     </v-main>

@@ -40,6 +40,8 @@ Modify files in `src/data` and `src/components` to extend the game, create new s
 
 A small map below the room description shows the locations you have already visited. Each room is drawn as a square with openings for any available exits and your current location highlighted.
 
+You can navigate using the on-screen arrow buttons or with your keyboard. Both the arrow keys and the classic `W`, `A`, `S`, `D` keys trigger movement between rooms.
+
 ## License
 
 MIT
