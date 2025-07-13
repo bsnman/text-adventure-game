@@ -9,14 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "pinia": "^3.0.3",
-    "vue": "^3.5.17"
+    "vue": "^3.5.17",
+    "vuetify": "^3.9.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
+    "sass": "^1.69.5",
     "typescript": "~5.8.3",
     "vite": "^7.0.4",
+    "vite-plugin-vuetify": "^2.1.1",
     "vue-tsc": "^2.2.12"
   }
 }
