@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { world } from '../data/world'
-import type { Coordinates } from '../types/world'
+import type { Coordinates, Item } from '../types/world'
+import { useInventoryStore } from './inventory'
 
 export const useGameStore = defineStore('game', {
   state: () => ({
@@ -27,6 +28,23 @@ export const useGameStore = defineStore('game', {
           this.visited[next] = coords
         }
         this.currentRoom = next
+      }
+    },
+    /** Pick up an item from the current room and add it to the inventory */
+    pickUp(id: string) {
+      const room = world[this.currentRoom]
+      if (!room.items) return
+      const index = room.items.findIndex(i => i.id === id)
+      if (index !== -1) {
+        const [item] = room.items.splice(index, 1)
+        useInventoryStore().add(item)
+      }
+    },
+    /** Use an item from the inventory */
+    useItem(id: string) {
+      const inventory = useInventoryStore()
+      if (inventory.has(id)) {
+        inventory.remove(id)
       }
     }
   }

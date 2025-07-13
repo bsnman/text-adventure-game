@@ -42,6 +42,10 @@ A small map below the room description shows the locations you have already visi
 
 You can navigate using the on-screen arrow buttons or with your keyboard. Both the arrow keys and the classic `W`, `A`, `S`, `D` keys trigger movement between rooms.
 
+## Inventory
+
+Some rooms contain items you can collect. The right side panel now displays an **Inventory** section listing everything you've picked up. Use the `pickUp` and `useItem` actions from the game store to manage these items in your own components or game logic.
+
 ## Features
 
 This project aims to grow into a full text adventure experience. The following features are currently planned:

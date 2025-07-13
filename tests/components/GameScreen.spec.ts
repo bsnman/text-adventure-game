@@ -8,7 +8,7 @@ function renderGame() {
   return render(GameScreen, {
     global: {
       plugins: [pinia],
-      stubs: ['MapCanvas']
+      stubs: ['MapCanvas', 'InventoryPanel']
     }
   })
 }
