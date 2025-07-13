@@ -46,6 +46,17 @@ You can navigate using the on-screen arrow buttons or with your keyboard. Both t
 
 Some rooms contain items you can collect. The right side panel now displays an **Inventory** section listing everything you've picked up. Use the `pickUp` and `useItem` actions from the game store to manage these items in your own components or game logic.
 
+## Character Stats
+
+The new **Character** panel shows your attributes and calculated combat values. Attributes influence derived stats as follows:
+
+- **Strength** – increases minimum and maximum damage
+- **Agility** – increases attack speed
+- **Vitality** – increases health and regeneration (not yet implemented)
+- **Intelligence** – increases mana and regeneration (not yet implemented)
+
+Displayed combat stats include minimum damage, maximum damage and attacks per second. Base damage and attack speed values are stored internally and combined with the attributes.
+
 ## Features
 
 This project aims to grow into a full text adventure experience. The following features are currently planned:
