@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGameStore } from '../store/game'
+import MapCanvas from './MapCanvas.vue'
 
 const game = useGameStore()
 </script>
@@ -9,6 +10,7 @@ const game = useGameStore()
     <v-card-title>Text Adventure Game</v-card-title>
     <v-card-text>
       <p>{{ game.room.description }}</p>
+      <MapCanvas :visited="game.visited" :current="game.currentRoom" class="mb-4" />
       <div class="my-2">
         <v-btn
           v-for="direction in Object.keys(game.room.exits)"
