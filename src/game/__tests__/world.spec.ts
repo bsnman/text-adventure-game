@@ -11,18 +11,25 @@ const baseConfig: WorldConfig = {
 }
 
 describe('generateWorld', () => {
-  it('creates a linear world using each room once', () => {
-    const world = generateWorld(baseConfig)
+  it('creates a linear world using each room once in random order', () => {
+    const rng = () => 0.2
+    const world = generateWorld(baseConfig, rng)
     expect(Object.keys(world)).toEqual([
       'start',
       'walkway1',
-      'a',
+      'b',
       'walkway2',
-      'b'
+      'a'
     ])
     expect(world.start.exits.north).toBe('walkway1')
-    expect(world.walkway1.exits.north).toBe('a')
-    expect(world.a.exits.south).toBe('walkway1')
+    expect(world.walkway1.exits.north).toBe('b')
+    expect(world.b.exits.south).toBe('walkway1')
+  })
+
+  it('produces different layouts when rng changes', () => {
+    const low = generateWorld(baseConfig, () => 0.2)
+    const high = generateWorld(baseConfig, () => 0.8)
+    expect(low.walkway1.exits.north).not.toBe(high.walkway1.exits.north)
   })
 
   it('throws when start room is missing', () => {

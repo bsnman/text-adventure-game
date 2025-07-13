@@ -1,5 +1,18 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
+
+vi.mock('../../src/data/world', () => {
+  const world = {
+    start: { description: 'start', exits: { north: 'walkway1' } },
+    walkway1: {
+      description: 'walk',
+      exits: { south: 'start', north: 'kitchen' }
+    },
+    kitchen: { description: 'kitchen', exits: { south: 'walkway1' } }
+  }
+  return { world }
+})
+
 import { useGameStore } from '../../src/store/game'
 
 describe('useGameStore', () => {
