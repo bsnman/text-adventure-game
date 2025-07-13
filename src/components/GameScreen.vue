@@ -1,18 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useGameStore } from '../store/game'
 
 const game = useGameStore()
-const command = ref('')
-
-function handleCommand() {
-  const input = command.value.trim().toLowerCase()
-  const match = input.match(/^(?:go\s+)?(\w+)/)
-  if (match) {
-    game.move(match[1])
-  }
-  command.value = ''
-}
 </script>
 
 <template>
@@ -30,13 +19,6 @@ function handleCommand() {
           Go {{ direction }}
         </v-btn>
       </div>
-      <v-text-field
-        v-model="command"
-        label="Command"
-        placeholder="e.g., go north"
-        hide-details
-        @keyup.enter="handleCommand"
-      ></v-text-field>
     </v-card-text>
   </v-card>
 </template>
