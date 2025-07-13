@@ -2,6 +2,7 @@
 import { useGameStore } from '../store/game'
 import MapCanvas from './MapCanvas.vue'
 import InventoryPanel from './InventoryPanel.vue'
+import CharacterPanel from './CharacterPanel.vue'
 import { useKeyboardMovement } from '../composables/useKeyboardMovement'
 
 const game = useGameStore()
@@ -20,6 +21,7 @@ useKeyboardMovement(game.move)
       </v-card>
     </v-col>
     <v-col cols="3" class="side-panel d-flex flex-column">
+      <CharacterPanel class="mb-2" />
       <InventoryPanel class="mb-2" />
       <div class="flex-grow-1"></div>
       <div class="d-flex flex-column align-center mb-4">
