@@ -1,4 +1,6 @@
-export const world = {
+import type { World } from '../types/world'
+
+export const world: World = {
   start: {
     description: "You are in a dimly lit room. There’s a door to the north.",
     exits: { north: "hallway" },
