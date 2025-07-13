@@ -54,6 +54,7 @@ This project aims to grow into a full text adventure experience. The following f
 - Turn-based RPG battle system with player and enemy stats, critical hits and rewards.
 - Save and load support.
 - Map of visited rooms drawn on a canvas.
+- Sidebar displays calculated character stats like damage and attack speed.
 
 ## License
 
