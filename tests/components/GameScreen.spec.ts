@@ -15,11 +15,18 @@ function renderGame() {
 
 describe('GameScreen', () => {
   it('displays room description and moves when button clicked', async () => {
-    const { getByText } = renderGame()
+    const { getByText, getByLabelText, getAllByText } = renderGame()
 
     getByText('dimly lit room', { exact: false })
-    const btn = getByText('Go north')
+    const btn = getByLabelText('Go north')
     await fireEvent.click(btn)
-    getByText('long hallway', { exact: false })
+    getAllByText('long hallway', { exact: false })
+  })
+
+  it('moves with keyboard arrows', async () => {
+    const { getByText, getAllByText } = renderGame()
+    getByText('dimly lit room', { exact: false })
+    await fireEvent.keyDown(window, { key: 'ArrowUp' })
+    getAllByText('long hallway', { exact: false })
   })
 })
