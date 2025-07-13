@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InventoryPanel > matches snapshot 1`] = `
+<div>
+  <v-card>
+    <v-card-title>
+      Inventory
+    </v-card-title>
+    <v-card-text>
+      <span>
+        No items
+      </span>
+    </v-card-text>
+  </v-card>
+</div>
+`;
