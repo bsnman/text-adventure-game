@@ -38,6 +38,10 @@ src/
 
 Modify files in `src/data` and `src/components` to extend the game, create new scenes or add features.
 
+### World Generation
+
+`src/data/world.ts` exports a configuration object and uses it to generate the game map. Rooms listed in the configuration are connected automatically with a reusable walkway room. Replacing or adjusting this configuration lets you create different levels without changing the game logic.
+
 A small map below the room description shows the locations you have already visited. Each room is drawn as a square with openings for any available exits and your current location highlighted.
 
 You can navigate using the on-screen arrow buttons or with your keyboard. Both the arrow keys and the classic `W`, `A`, `S`, `D` keys trigger movement between rooms.
